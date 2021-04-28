@@ -11,10 +11,11 @@ pipeline {
                 bat "docker-compose up duckduckgo-searchResults-module newtours-flightBooking-module"
             }
         }
-        stage('Bring grid down') {
-            steps {
-                bat "docker-compose down"
-            }
-        }
     }
+	post{
+		always{
+			archiveArtifacts artifacts: 'output/**'
+			bat "docker-compose down"
+		}
+	}
 }

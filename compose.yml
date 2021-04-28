@@ -26,7 +26,7 @@ services:
             - HUB_HOST=ramdeep_hub
             - MODULE=duckduckgo-searchResults-testng.xml
         volumes:
-            - ./docker-output:/usr/ramdeep/workspace/test-output
+            - ./output/docker-output:/usr/ramdeep/workspace/test-output
     newtours-flightBooking-module:
         image: ramdeepmansa/selenium-docker
         depends_on:
@@ -37,4 +37,4 @@ services:
             - HUB_HOST=ramdeep_hub
             - MODULE=newtours-flightBooking-testng.xml
         volumes:
-            - ./docker-output1:/usr/ramdeep/workspace/test-output
+            - ./output/docker-output1:/usr/ramdeep/workspace/test-output
